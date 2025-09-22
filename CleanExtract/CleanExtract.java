@@ -29,6 +29,6 @@ public class CleanExtract {
             }
         }
 
-        return result+=".";
+        return (result.isEmpty()) ? result : result+".";
     }
 }
