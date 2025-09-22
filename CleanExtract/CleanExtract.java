@@ -7,14 +7,16 @@ public class CleanExtract {
             part = part.trim();
             int firstDot = part.indexOf('.');
             int lastDot = part.lastIndexOf('.');
-
             String cleaned = "";
 
-            if (firstDot != -1 && lastDot != -1 && firstDot < lastDot) {
-                for (int i = firstDot + 1; i < lastDot; i++) {
-                    cleaned += part.charAt(i);
+            if (firstDot != -1) {
+                if (firstDot == lastDot) {
+                    // Only one dot → take everything after it
+                    cleaned = part.substring(firstDot + 1).trim();
+                } else {
+                    // Multiple dots → take between first and last
+                    cleaned = part.substring(firstDot + 1, lastDot).trim();
                 }
-                cleaned = cleaned.trim();
             }
 
             if (!cleaned.isEmpty()) {
@@ -25,6 +27,7 @@ public class CleanExtract {
             }
         }
 
+        // Add only one dot at the end
         if (!result.isEmpty() && !result.endsWith(".")) {
             result += ".";
         }
