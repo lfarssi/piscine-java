@@ -3,3 +3,4 @@ public class StringContains {
         return (a!= null) && (b != null) &&  b.contains(a);
     }
 }
+ 
