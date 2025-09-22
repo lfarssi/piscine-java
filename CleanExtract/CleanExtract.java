@@ -11,10 +11,8 @@ public class CleanExtract {
 
             if (firstDot != -1) {
                 if (firstDot == lastDot) {
-                    // Only one dot → take everything after it
                     cleaned = part.substring(firstDot + 1).trim();
                 } else {
-                    // Multiple dots → take between first and last
                     cleaned = part.substring(firstDot + 1, lastDot).trim();
                 }
             }
@@ -25,11 +23,6 @@ public class CleanExtract {
                 }
                 result += cleaned;
             }
-        }
-
-        // Add only one dot at the end
-        if (!result.isEmpty() && !result.endsWith(".")) {
-            result += ".";
         }
 
         return result;
