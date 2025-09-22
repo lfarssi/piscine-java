@@ -9,8 +9,12 @@ public class CleanExtract {
             int lastDot = part.lastIndexOf('.');
 
             String cleaned = "";
+
             if (firstDot != -1 && lastDot != -1 && firstDot < lastDot) {
-                cleaned = part.substring(firstDot + 1, lastDot).trim();
+                for (int i = firstDot + 1; i < lastDot; i++) {
+                    cleaned += part.charAt(i);
+                }
+                cleaned = cleaned.trim();
             }
 
             if (!cleaned.isEmpty()) {
