@@ -5,20 +5,12 @@ public class CleanExtract {
 
         for (String part : parts) {
             part = part.trim();
-            boolean inside = false;
+            int firstDot = part.indexOf('.');
+            int lastDot = part.lastIndexOf('.');
+
             String cleaned = "";
-
-            for (int i = 0; i < part.length(); i++) {
-                char c = part.charAt(i);
-
-                if (c == '.') {
-                    inside = !inside;
-                    continue;
-                }
-
-                if (inside) {
-                    cleaned += c; 
-                }
+            if (firstDot != -1 && lastDot != -1 && firstDot < lastDot) {
+                cleaned = part.substring(firstDot + 1, lastDot).trim();
             }
 
             if (!cleaned.isEmpty()) {
@@ -29,6 +21,10 @@ public class CleanExtract {
             }
         }
 
-        return (result.isEmpty()) ? result : result+".";
+        if (!result.isEmpty() && !result.endsWith(".")) {
+            result += ".";
+        }
+
+        return result;
     }
 }
