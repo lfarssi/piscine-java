@@ -21,7 +21,7 @@ public class FileSearch {
                 }
             } 
             else if (file.getName().equals(filename)) {
-                return file.getAbsolutePath();
+                return file.getPath();
             }
         }
         return null;
