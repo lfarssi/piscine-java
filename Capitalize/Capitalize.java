@@ -14,7 +14,7 @@ public class Capitalize {
         Path path2= Path.of(filename2);
         try {
             String content = Files.readString(path1);
-            String[] words = content.trim().split(" ");
+            String[] words = content.trim().split("\\s+");
             for (int i= 0 ; i<words.length; i++){
                 String word = words[i];
                 if (word.length()>0){
