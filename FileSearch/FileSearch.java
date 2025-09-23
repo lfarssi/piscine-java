@@ -3,6 +3,9 @@ import java.io.*;
 public class FileSearch {
     public static String searchFile(String fileName) {
         File directory = new File("documents");
+        if (directory.exists() || directory.isDirectory()){
+            return null;
+        }
         return search(directory, fileName);
     }
     public static String search(File directory, String filename){
