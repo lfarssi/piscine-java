@@ -8,6 +8,7 @@ public class DoOp {
             case "-" -> String.valueOf(n1 - n2);
             case "*" -> String.valueOf(n1 * n2);
             case "/" -> String.valueOf(n1 / n2);
+            case "%" -> String.valueOf(n1 % n2);
             default ->"Error";
         };
     }
