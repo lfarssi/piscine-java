@@ -28,22 +28,17 @@ public class Planet extends CelestialObject {
     }
 
     @Override
-    public boolean equals(Object order) {
-        if (order == null) {
-            return false;
-        }
-        if (order == this) {
+    public boolean equals(Object other) {
+        if (this == other) {
             return true;
         }
-        if (order.getClass() != this.getClass()) {
+        if (other == null || getClass() != other.getClass()) {
             return false;
         }
-        Planet o = (Planet) order;
-        if (this.getName().equals(o.getName()) && this.getX() == o.getX() && this.getY() == o.getY() && this.getZ() == o.getZ() && this.centerStar.equals(o.centerStar)) {
-            return true;
-        }
-        return false;
+        Planet planet = (Planet) other;
+        return super.equals(planet) && Objects.equals(this.centerStar, planet.centerStar);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(super.getName(), super.getX(), super.getY(), super.getZ(), this.centerStar);
