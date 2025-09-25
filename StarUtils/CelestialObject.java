@@ -65,25 +65,19 @@ public class CelestialObject {
     return getDistanceBetween(a, b) * KM_IN_ONE_AU;
   }
 
-  @Override
   public String toString() {
     return String.format("%s is positioned at (%.3f, %.3f, %.3f)", name, x, y, z);
   }
 
-  @Override
-  public boolean equals(Object obj) {
-    if (this == obj) {
-      return true;
-    }
-    if (obj == null || getClass() != obj.getClass()) {
+  public boolean equals(CelestialObject other) {
+   
+    if (other == null) {
             return false;
     }
-    CelestialObject other = (CelestialObject) obj;
 
-    return (x == other.x) && (y == other.y) && (z == other.z);
+    return (this.x == other.x) && (this.y == other.y) && (this.z == other.z) && (this.name ==other.name);
   }
 
-  @Override
   public int hashCode() {
     return Objects.hash(x, y, z, name);
   }
