@@ -29,14 +29,18 @@ public class Star extends CelestialObject {
 
     @Override
     public boolean equals(CelestialObject other) {
-        if (other == null){
+        if (other == null) {
             return false;
         }
-        return this.getName() == other.getName() &&
-                this.getX() == other.getX() &&
-                this.getY() == other.getY() &&
-                this.getZ() == other.getZ() &&
-                this.magnitude == ((Star) other).magnitude;
+        if (!(other instanceof Star)) {
+            return false;
+        }
+        Star o = (Star) other;
+        return this.getName() == o.getName() &&
+               this.getX() == o.getX() &&
+               this.getY() == o.getY() &&
+               this.getZ() == o.getZ() &&
+               this.magnitude == o.magnitude;
     }
 
     @Override
