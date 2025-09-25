@@ -20,12 +20,12 @@ public class Planet extends CelestialObject {
         this.centerStar = center;
     }
 
-    @Override
+    @Override   
     public String toString() {
         if (this.centerStar == null) {
             return String.format("%s circles around no star at the %.3f AU", super.getName(), 0.000);
         }
-        return String.format("%s circles around %s at the %.3f AU", super.getName(), this.centerStar.getName(), super.getDistanceBetweenInKm(this, this.centerStar) / super.KM_IN_ONE_AU);
+        return String.format("%s circles around %s at the %.3f AU", getName(), centerStar.getName(), CelestialObject.getDistanceBetweenInKm(this, this.centerStar) / CelestialObject.KM_IN_ONE_AU);
     }
 
     @Override
