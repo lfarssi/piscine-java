@@ -3,6 +3,7 @@ import java.util.Objects;
 public class Planet extends CelestialObject {
    private Star centerStar;
    public Planet(){
+    super();
     this.centerStar = new Star();
    }
    public Planet(String name, double x, double y, double z, Star centerStar){
