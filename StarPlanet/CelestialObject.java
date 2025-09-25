@@ -69,12 +69,26 @@ public class CelestialObject {
     return String.format("%s is positioned at (%.3f, %.3f, %.3f)", name, x, y, z);
   }
 
-  public boolean equals(CelestialObject other) {
-    if (other == null) {
+   @Override
+    public boolean equals(Object order) {
+        if (order == null) {
             return false;
+        }
+        if (order == this) {
+            return true;
+        }
+        if (order.getClass() != this.getClass()) {
+            return false;
+        }
+        CelestialObject o = (CelestialObject) order;
+        if (!(o instanceof CelestialObject)) {
+            return false;
+        }
+        if (this.name.equals(o.name) && this.x == o.x && this.y == o.y && this.z == o.z) {
+            return true;
+        }
+        return false;
     }
-    return (this.x == other.x) && (this.y == other.y) && (this.z == other.z) && (this.name ==other.name);
-  }
 
   public int hashCode() {
     return Objects.hash(x, y, z, name);
