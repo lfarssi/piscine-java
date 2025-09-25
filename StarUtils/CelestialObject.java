@@ -80,7 +80,7 @@ public class CelestialObject {
     }
     CelestialObject other = (CelestialObject) obj;
 
-    return (x == other.x) && (y == other.y) && (z == other.z) && !Objects.equals(name, other.name);
+    return (x == other.x) && (y == other.y) && (z == other.z);
   }
 
   @Override
