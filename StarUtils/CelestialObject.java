@@ -8,17 +8,17 @@ public class CelestialObject {
   public static final double KM_IN_ONE_AU = 150_000_000;
 
   public CelestialObject() {
-    x = 0.0;
-    y = 0.0;
-    z = 0.0;
-    name = "Soleil";
+    this.x = 0.0;
+    this.y = 0.0;
+    this.z = 0.0;
+    this.name = "Soleil";
   }
 
   public CelestialObject(String namee, double n1, double n2, double n3) {
-    x = n1;
-    y = n2;
-    z = n3;
-    name = namee;
+    this.x = n1;
+    this.y = n2;
+    this.z = n3;
+    this.name = namee;
   }
 
   public double getX() {
