@@ -18,29 +18,25 @@ public class CelestialObject {
     public  double getX(){
       return x;
     }
-    public double setX(double n1){
+    public void setX(double n1){
         x = n1;
-      return x;
       }
        public  double getY(){
       return y;
     }
-    public double setY(double n1){
+    public void setY(double n1){
         y = n1;
-      return y;
       }
         public  double getZ(){
       return z;
     }
-    public double setZ(double n1){
+    public void setZ(double n1){
         z = n1;
-      return z;
       }
         public  String getName(){
       return name;
     }
-    public String setName(String n1){
+    public void setName(String n1){
         name = n1;
-      return name;
       }
 }
