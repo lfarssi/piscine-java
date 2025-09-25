@@ -14,7 +14,7 @@ public class Planet extends CelestialObject {
     }
 
     public Star getCenterStar() {
-        return this.centerStar;
+        return centerStar;
     }
 
     public void setCenterStar(Star center) {
