@@ -38,11 +38,7 @@ public class Planet extends CelestialObject {
             return false;
         }
         Planet o = (Planet) other;
-        return this.getName().equals(o.getName()) &&
-                this.getX() == o.getX() &&
-                this.getY() == o.getY() &&
-                this.getZ() == o.getZ() &&
-                this.centerStar.equals(o.centerStar);
+        return super.equals(o) && Objects.equals(centerStar, o.centerStar);
     }
 
     @Override
