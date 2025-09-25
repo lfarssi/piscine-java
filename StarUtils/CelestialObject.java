@@ -75,6 +75,9 @@ public class CelestialObject {
     if (this == obj) {
       return true;
     }
+    if (obj == null || getClass() != obj.getClass()) {
+            return false;
+    }
     CelestialObject other = (CelestialObject) obj;
 
     return (x == other.x) && (y == other.y) && (z == other.z);
