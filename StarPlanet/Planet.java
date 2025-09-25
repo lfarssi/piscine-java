@@ -14,7 +14,7 @@ public class Planet extends CelestialObject {
     }
 
     public Star getCenterStar() {
-        return centerStar;
+        return this.centerStar;
     }
 
     public void setCenterStar(Star center) {
@@ -28,15 +28,15 @@ public class Planet extends CelestialObject {
     }
 
     @Override
-    public boolean equals(CelestialObject other) {
-        if (other == null) {
+    public boolean equals(Object other) {
+        if (this == other) {
+            return true;
+        }
+        if (other == null || getClass() != other.getClass()) {
             return false;
         }
-        if (!(other instanceof Planet)) {
-            return false;
-        }
-        Planet o = (Planet) other;
-        return super.equals(o) && Objects.equals(centerStar, o.centerStar);
+        Planet planet = (Planet) other;
+        return super.equals(planet) && Objects.equals(this.centerStar, planet.centerStar);
     }
 
     @Override
