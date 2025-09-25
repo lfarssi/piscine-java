@@ -54,6 +54,9 @@ public class CelestialObject {
     public int getMass() {
         return mass;
     }
+    public void setMass(int m){
+      this.mass = m;
+    }
   public String getName() {
     return name;
   }
