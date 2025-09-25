@@ -27,21 +27,22 @@ public class Star extends CelestialObject {
         return String.format("%s shines at the %.3f magnitude", super.getName(), this.magnitude);
     }
 
-  @Override
-public boolean equals(CelestialObject other) {
-    if (other == null) {
-        return false;
+    @Override
+    public boolean equals(CelestialObject other) {
+        if (other == null) {
+            return false;
+        }
+        if (!(other instanceof Star)) {
+            return false;
+        }
+        Star o = (Star) other;
+        return this.getName() == o.getName() &&
+               this.getX() == o.getX() &&
+               this.getY() == o.getY() &&
+               this.getZ() == o.getZ() &&
+               this.magnitude == o.magnitude;
     }
-    if (!(other instanceof Star)) {
-        return false;
-    }
-    Star o = (Star) other;
-    return this.getName() == o.getName() &&
-           this.getX() == o.getX() &&
-           this.getY() == o.getY() &&
-           this.getZ() == o.getZ() &&
-           this.magnitude == o.magnitude;
-}
+
     @Override
     public int hashCode() {
         return Objects.hash(super.getName(), super.getX(), super.getY(), super.getZ(), this.magnitude);
