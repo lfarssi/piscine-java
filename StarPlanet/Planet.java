@@ -23,9 +23,7 @@ public class Planet extends CelestialObject {
 
     @Override
     public String toString() {
-        if (this.centerStar == null) {
-            return String.format("%s circles around no star at the %.3f AU", super.getName(), 0.000);
-        }
+
         double distanceInAU = CelestialObject.getDistanceBetweenInKm(this, this.centerStar)
                 / CelestialObject.KM_IN_ONE_AU;
         return String.format("%s circles around %s at the %.3f AU", getName(), centerStar.getName(), distanceInAU);
@@ -49,6 +47,6 @@ public class Planet extends CelestialObject {
 
     @Override
     public int hashCode() {
-        return Objects.hash(getName(),getX(),getY(), getZ(), this.centerStar);
+        return Objects.hash(super.getName(), super.getX(), super.getY(), super.getZ(), this.centerStar);
     }
 }
