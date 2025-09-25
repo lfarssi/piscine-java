@@ -7,4 +7,4 @@ public class ExerciseRunner {
         System.out.println(celestialObject.z);
         System.out.println(celestialObject.name);
     }
-}
+}   

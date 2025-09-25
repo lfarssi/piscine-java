@@ -4,7 +4,7 @@ import java.nio.file.Path;
 
 public class CatInFile {
     public static void cat(String[] args) throws IOException {
- if (args.length !=1){
+        if (args.length !=1){
             return ;
         }
         String filename= args[0];
