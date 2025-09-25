@@ -13,3 +13,4 @@ public class Galaxy {
         celestialObjects.add(cele);
     }
 }
+ 
