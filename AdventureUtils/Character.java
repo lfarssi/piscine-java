@@ -5,12 +5,12 @@ public class Character {
     private final int maxHealth;
     private int currentHealth;
     private final String name;
-    private static List<Character> allCharacter= new ArrayList<>();
+    private static List<Character> allCharacters= new ArrayList<>();
     public Character(String name, int maxHealth) {
         this.maxHealth= maxHealth;
         this.currentHealth= maxHealth;
         this.name=name;
-        allCharacter.add(this);
+        allCharacters.add(this);
     }
     public String getName(){
         return name;
@@ -39,10 +39,10 @@ public class Character {
     }
     public static String printStatus(){
         String res="";
-        if (!allCharacter.isEmpty()){
+        if (!allCharacters.isEmpty()){
             res +="------------------------------------------\n";
            res+="Characters currently fighting :\n";
-            for (Character character : allCharacter){
+            for (Character character : allCharacters){
                res+=String.format(" - %s\n", character.toString());
             }
            res+="------------------------------------------\n";
