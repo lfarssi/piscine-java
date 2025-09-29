@@ -25,7 +25,7 @@ public class Templar extends Character implements Healer, Tank {
 
     @Override
     public void attack(Character character) {
-         heal(this);
+        //  heal(this);
         int damage = getWeapon() != null ? getWeapon().getDamage() : 6;
         character.takeDamage(damage);
     }   
