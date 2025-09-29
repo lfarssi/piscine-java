@@ -24,7 +24,7 @@ public class Templar extends Character implements Healer, Tank {
     }
     @Override
     public String toString(){
-        if (getCurrentHealth()==0){
+        if (getCurrentHealth()!=0){
             return String.format("%s is a strong Templar with %d HP. It can heal %d HP and has a shield of %d.", getName(), getCurrentHealth()  , getHealCapacity(), getShield() );
         } else {
             return String.format("%s has been beaten, even with its %d shield. So bad, it could heal %s HP.", getName(),    getShield(), getHealCapacity() );
