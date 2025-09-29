@@ -18,7 +18,7 @@ public class Character {
     }
     @Override public String toString(){
         if (this.currentHealth==0){
-            return "KO";
+            return String.format("%s : KO", this.name);
         }
             return String.format("%s : %d/%d", this.name, this.currentHealth, this.maxHealth);
     }
