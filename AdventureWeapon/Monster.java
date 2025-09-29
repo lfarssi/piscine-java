@@ -1,6 +1,6 @@
 public class Monster extends Character {
-    public  Monster(String name, int maxHealth) {
-        super(name, maxHealth);
+    public  Monster(String name, int maxHealth, Weapon weapon) {
+        super(name, maxHealth, weapon);
     }
     @Override
     public String toString(){
