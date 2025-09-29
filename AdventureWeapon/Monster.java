@@ -4,13 +4,8 @@ public class Monster extends Character {
     }
     @Override
     public String toString(){
-        if (this.getCurrentHealth()>0){
-
-            return String.format("%s is a monster with %d HP", this.getName(), this.getCurrentHealth());
-        } else {
-            return String.format("%s is a monster and is dead", this.getName());
-            
-        }
+        String res = (this.getCurrentHealth()>0)? String.format("%s is a monster with %d HP", this.getName(), this.getCurrentHealth()):String.format("%s is a monster and is dead", this.getName());
+        return (getWeapon()!=null)?res +". He has the weapon " + getWeapon().toString(): res;
     }
       @Override
     public void attack(Character character) {

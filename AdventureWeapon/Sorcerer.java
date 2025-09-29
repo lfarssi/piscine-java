@@ -17,10 +17,10 @@ public class Sorcerer extends Character implements Healer {
     }
 
     @Override
-    public void attack(Character target) {
+    public void attack(Character character) {
         heal(this);
         int damage = getWeapon() != null ? getWeapon().getDamage() : 10;
-        target.takeDamage(damage);
+        character.takeDamage(damage);
     }
 
     @Override
@@ -30,14 +30,10 @@ public class Sorcerer extends Character implements Healer {
 
     @Override
     public String toString() {
-        if (getCurrentHealth() == 0) {
-            return String.format("%s is a dead sorcerer. So bad, it could heal %d HP.", getName(), getHealCapacity());
-
-        } else {
-
-            return String.format("%s is a sorcerer with %d HP. It can heal %d HP.", getName(), getCurrentHealth(),
+         String res=(getCurrentHealth() == 0) ? String.format("%s is a dead sorcerer. So bad, it could heal %d HP.", getName(), getHealCapacity()):
+         String.format("%s is a sorcerer with %d HP. It can heal %d HP.", getName(), getCurrentHealth(),
                     getHealCapacity());
-        }
+        return (getWeapon()!= null)?res +" He has the weapon " + getWeapon().toString():res;
     }
 
 }

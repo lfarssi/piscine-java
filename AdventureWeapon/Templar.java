@@ -24,11 +24,11 @@ public class Templar extends Character implements Healer, Tank {
     }
 
     @Override
-    public void attack(Character target) {
+    public void attack(Character character) {
         heal(this);
         int damage = getWeapon() != null ? getWeapon().getDamage() : 6;
-        target.takeDamage(damage);
-    }
+        character.takeDamage(damage);
+    }   
 
     @Override
     public void takeDamage(int damage) {
@@ -40,13 +40,11 @@ public class Templar extends Character implements Healer, Tank {
 
     @Override
     public String toString() {
-        if (getCurrentHealth() != 0) {
-            return String.format("%s is a strong Templar with %d HP. It can heal %d HP and has a shield of %d.",
-                    getName(), getCurrentHealth(), getHealCapacity(), getShield());
-        } else {
-            return String.format("%s has been beaten, even with its %d shield. So bad, it could heal %s HP.", getName(),
+        String  res = (getCurrentHealth() != 0)  ?String.format("%s is a strong Templar with %d HP. It can heal %d HP and has a shield of %d.",
+                    getName(), getCurrentHealth(), getHealCapacity(), getShield()):
+                     String.format("%s has been beaten, even with its %d shield. So bad, it could heal %s HP.", getName(),
                     getShield(), getHealCapacity());
-
-        }
+        
+        return (getWeapon()==null)? res: res +" He has the weapon " + getWeapon().toString();
     }
 }
