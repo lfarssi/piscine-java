@@ -82,7 +82,9 @@ public abstract class Character {
         }
         return null;
     }
-    public void receiveHealing(int ta9a){
+    public void receiveHealing(int ta9a)throws DeadCharacterException{
+        if (currentHealth == 0)
+            throw new DeadCharacterException(this);
         if (currentHealth==0)return;
         currentHealth+=ta9a;
         if (currentHealth>maxHealth){
@@ -90,6 +92,8 @@ public abstract class Character {
         }
     }
     public void reduceHealth(int damage) throws DeadCharacterException {
+          if (currentHealth == 0)
+            throw new DeadCharacterException(this);
         currentHealth -= damage;
         if (currentHealth < 0)
             currentHealth = 0;
