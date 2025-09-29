@@ -28,13 +28,7 @@ public abstract class Character {
     public int getCurrentHealth(){
         return currentHealth;
     }
-    @Override public String toString(){
-        if (this.currentHealth==0){
-            return String.format("%s : KO", this.name);
-        }
-            return String.format("%s : %d/%d", this.name, this.currentHealth, this.maxHealth);
-    }
-
+    
     protected void setCurrentHealth(int currentHealth) {
         if (currentHealth < 0) {
             this.currentHealth = 0;
