@@ -12,19 +12,19 @@ public class Sorcerer extends Character implements Healer {
     }
 
     @Override
-    public void heal(Character character)  {
+    public void heal(Character character) throws DeadCharacterException {
         character.receiveHealing(healCapacity);
     }
 
     @Override
-    public void attack(Character character)  {
+    public void attack(Character character) throws DeadCharacterException {
         heal(this);
         int damage = getWeapon() != null ? getWeapon().getDamage() : 10;
         character.takeDamage(damage);
     }
 
     @Override
-    public void takeDamage(int damage)  {
+    public void takeDamage(int damage) throws DeadCharacterException {
         reduceHealth(damage);
     }
 
