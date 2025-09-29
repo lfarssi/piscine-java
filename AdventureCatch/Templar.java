@@ -33,7 +33,7 @@ public class Templar extends Character implements Healer, Tank {
     }   
 
     @Override
-    public void takeDamage(int damage) {
+    public void takeDamage(int damage) throws DeadCharacterException {
         int templarDamage = damage - shield;
         if (templarDamage < 0)
             templarDamage = 0;
