@@ -7,7 +7,7 @@ import java.util.stream.Stream;
 public class StreamCollect {
     public static Map<Character, List<String>> mapByFirstLetter(Stream<String> s) {
         // your code here
-        return s.filter(str->!str.isEmpty()).collect(Collectors.groupingBy(str->str.charAt(0)));
+        return s.filter(str->!str.isEmpty()).collect(Collectors.groupingBy(str->Character.toUpperCase(str.charAt(0))));
     }
 
     public static Map<Integer, Optional<Integer>> getMaxByModulo4(Stream<Integer> s) {
