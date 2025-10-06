@@ -20,7 +20,6 @@ public class FormatDate {
 
     public static String formatIso(LocalTime time) {
         if (time == null) return null;
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH:mm:ss.SSSSSSSSS");
-        return time.format(formatter);
+        return time.format(DateTimeFormatter.ISO_LOCAL_TIME);
     }
 }
