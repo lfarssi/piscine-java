@@ -8,7 +8,7 @@ public class FormatDate {
 
     public static String formatToFullText(LocalDateTime dateTime) {
         if (dateTime == null) return null;
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("'Le 'd MMMM 'de l''an 'yyyy 'à 'H'h'm'm et 's's'", Locale.FRENCH);
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("'Le 'd MMM 'de l''an 'yyyy 'à 'H'h'm'm et 's's'", Locale.FRENCH);
         return dateTime.format(formatter);
     }
 
